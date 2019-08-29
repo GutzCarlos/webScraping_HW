@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-fluid">
+      <div class="jumbotron text-center">
+        <h1>Data on...</h1>
+        <p>Lates News, Facts, Weather and Images.</p>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+      </div>
+      <h1>Latest Mars News</h1>
+      <h2>{{marsNews.LN.LN_title}}</h2>
+      <p>{{marsNews.LN.LN_text}}</p>
+      <br>
+      <hr>
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Featured Mars Image</h1>
+          <img src={{marsNews.image}} alt="recImage" width=700px>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-left" style="width: 38rem;">
+              <div class="card-body">
+                  <h3 class="card-title">Currente weather on Mars</h3>
+                <p class="card-text">{{marsNews.weather}}.</p>
+              </div>
+            </div>
+            <br>
+          <h3>Mars Facts</h3>
+          <div class="table-responsive-md">
+              {{marsNews.facts|safe}}
+          </div>
+        </div>
+      </div>
+      <br><hr>
+      <h1 style="text-align: center">Mars Hemispheres</h1>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="card text-center" style="width: 48rem;">
+              <img src={{marsNews.hemispheres[0].img_url}} class="card-img-top" alt={{marsNews.hemispheres[0].title}} width="500px">
+              <div class="card-body">
+                <h3 class="card-text">{{marsNews.hemispheres[0].title}}.</h3>
+              </div>
+            </div>
+            <br>        
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center" style="width: 48rem;">
+              <img src={{marsNews.hemispheres[1].img_url}} class="card-img-top" alt={{marsNews.hemispheres[1].title}} width="500px">
+              <div class="card-body">
+                <h3 class="card-text">{{marsNews.hemispheres[1].title}}.</h3>
+              </div>
+            </div>
+            <br>        
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="card text-center" style="width: 48rem;">
+                <img src={{marsNews.hemispheres[2].img_url}} class="card-img-top" alt={{marsNews.hemispheres[2].title}} width="500px">
+                <div class="card-body">
+                  <h3 class="card-text">{{marsNews.hemispheres[2].title}}.</h3>
+                </div>
+              </div>
+              <br>        
+          </div>
+          <div class="col-md-6">
+              <div class="card text-center" style="width: 48rem;">
+                <img src={{marsNews.hemispheres[3].img_url}} class="card-img-top" alt={{marsNews.hemispheres[3].title}} width="500px">
+                <div class="card-body">
+                  <h3 class="card-text">{{marsNews.hemispheres[3].title}}.</h3>
+                </div>
+              </div>
+              <br>        
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
